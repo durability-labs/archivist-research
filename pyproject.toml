@@ -1,0 +1,26 @@
+[project]
+name = "archivist-research"
+requires-python = ">=3.10"
+version = "0.1.0"
+description = "Archivist durability and reliability analysis notebooks"
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.0",
+    "testbook>=0.4",
+    "jupyter",
+    "nbconvert",
+    "scipy",
+    "numpy",
+    "matplotlib",
+    "pandas",
+    "seaborn",
+    "pydtmc",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["reliability analysis/tests"]
+markers = [
+    "slow: marks tests as slow (execute with -m slow)",
+]
+addopts = "-p no:brownie"
